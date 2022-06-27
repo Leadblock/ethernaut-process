@@ -25,7 +25,6 @@ contract King {
   }
 }
 
-
 contract Attack {
   King public game;
 

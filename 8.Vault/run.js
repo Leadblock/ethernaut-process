@@ -26,14 +26,14 @@ async function main() {
   const abi = [
     // Read-Only Functions
     "function unlock(bytes32 _password) public",
-    "function locked() public returns (bool)",
+    "function locked() public view returns (bool)",
   ];
 
   const vaultit = new hre.ethers.Contract(Level_Address, abi, payer);
 
-  let tx = await vaultit.unlock(key)
-  let txinfo = await tx.wait()
-  console.log('transfer txhash', txinfo.blockNumber, txinfo.transactionHash)
+  // let tx = await vaultit.unlock(key)
+  // let txinfo = await tx.wait()
+  // console.log('transfer txhash', txinfo.blockNumber, txinfo.transactionHash)
 
   console.log('final locked', await vaultit.locked())
 
